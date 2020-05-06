@@ -3,6 +3,8 @@ import { Video, Audio } from 'expo-av';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import ReactNativeVideo from 'react-native-video';
 import WebViewScreen from './WebViewScreen';
+import VideoPlayer from './Video';
+
 
 Audio.setAudioModeAsync({
   interruptionModeIOS: Audio.INTERRUPTION_MODE_IOS_DO_NOT_MIX,
@@ -18,23 +20,24 @@ const videos = {
 
 export default function App() {
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container} >
       <Text>Open up App.js to start working on your app!</Text>
+      <VideoPlayer />
       {/* <WebViewScreen src={videos.VIMEO} /> */}
-      <WebViewScreen src="https://www.w3schools.com/html/mov_bbb.mp4" />
+      {/* <WebViewScreen src="https://www.w3schools.com/html/mov_bbb.mp4" />
       <Video shouldPlay style={{ width: 200, height: 200 }} source={{ uri: videos.VIMEO }} />
       <Video shouldPlay style={{ width: 200, height: 200 }} source={{ uri: videos.AKAMAI_PROXIED }} />
       <ReactNativeVideo controls style={{ width: 200, height: 200 }} source={{ uri: videos.VIMEO }} />
-      <ReactNativeVideo controls style={{ width: 200, height: 200 }} source={{ uri: videos.AKAMAI_PROXIED }} />
-    </ScrollView>
+      <ReactNativeVideo controls style={{ width: 200, height: 200 }} source={{ uri: videos.AKAMAI_PROXIED }} /> */}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+     flex: 1,
     backgroundColor: '#fff',
-    // alignItems: 'center',
-    // justifyContent: 'center',
+     alignItems: 'center',
+     justifyContent: 'center',
   },
 });
